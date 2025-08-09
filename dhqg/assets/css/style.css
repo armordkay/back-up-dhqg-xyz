@@ -1,0 +1,4 @@
+/* Bỏ gạch chân mặc định cho tất cả các thẻ a */
+a {
+    text-decoration: none !important;
+}

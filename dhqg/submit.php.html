@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Review giảng viên VNU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="title" name="title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="description" name="description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="keywords" name="keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="url" name="url" content="https://dhqg.xyz">
+    <meta property="type" name="type" content="website">
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="og:title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="og:description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="og:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="og:url" content="https://dhqg.xyz">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Đánh giá giảng viên ĐHQGHN">
+    <meta name="twitter:description" content="Review giảng viên, môn học ĐHQGHN không cần đăng nhập.">
+    <meta name="twitter:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta name="twitter:image" content="https://dhqg.xyz">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.js"></script>
+
+
+    <!-- CSS custom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="index.php.html">Review giảng viên VNU</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Mở menu điều hướng">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto nav-pills m-2">
+                <li class="nav-item">
+                    <a href="index.php.html" class="nav-link active p-2" aria-current="page">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="submit.php.html">Đăng đánh giá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="search.php.html">Tìm kiếm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container flex-grow-1">
+
+    <!-- Alert thông báo -->
+    <div class="alert alert-warning d-flex align-items-center justify-content-start gap-2" role="alert" style="cursor: pointer;" onclick="window.location.href='./submit.php'" id="notification">
+        <span class="fw-semibold">Nhấn vào đây để đăng đánh giá của bạn (Hoàn toàn ẩn danh)</span>
+    </div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<div class="container mt-4">
+    <h3>Gửi đánh giá</h3>
+    <form id="review-form">
+        <div class="alert alert-danger mt-3">
+            Nếu không thấy tên giảng viên/môn học cần đánh giá thì hãy chọn là <strong>"Không rõ"</strong> và thêm tên giảng viên/môn học vào phần nội dung
+        </div>
+        
+        <div class="mb-3">
+            <label for="teacher" class="form-label">Chọn giảng viên</label>
+            <select id="teacher" name="teacher" class="form-select select2" required>
+                <option value="">-- Chọn giảng viên --</option>
+                <option value="286">Bùi Anh Chưởng</option><option value="306">Bùi Bá Quân</option><option value="266">Bùi Duy Hiếu</option><option value="3">Bùi Ngọc Thăng</option><option value="4">Bùi Quang Hưng</option><option value="171">Bùi Thanh Tùng</option><option value="263">Bùi Thế Duy</option><option value="193">Bùi Thu Hằng</option><option value="5">Bùi Trung Ninh</option><option value="310">Bùi Văn Thái</option><option value="6">Bùi Văn Vượng</option><option value="126">Bùi Đình Tú</option><option value="7">Cấn Duy Cát</option><option value="190">Chu Đức Hà</option><option value="8">Chử Đức Trình</option><option value="194">Dư Phương Hạnh</option><option value="108">Dư Thành Hưng</option><option value="135">Dương Kim Huệ</option><option value="234">Dương Lê Minh</option><option value="2">Dương Ngọc Sơn</option><option value="23">Dương Thị Thanh Hương</option><option value="212">Dương Tuấn Mạnh</option><option value="24">Dương Văn Tân</option><option value="186">Dương Việt Dũng</option><option value="178">Hà Minh Cường</option><option value="265">Hà Quang Thụy</option><option value="343">Hà Thị Bắc</option><option value="228">Hà Thị Quyến</option><option value="319">Hà Văn Đức</option><option value="131">Hồ Thị Anh</option><option value="240">Hồ Đắc Phương</option><option value="25">Hoàng Bảo Anh</option><option value="292">Hoàng Cẩm Giang</option><option value="26">Hoàng Gia Hưng</option><option value="248">Hoàng Hữu Bách</option><option value="27">Hoàng Lê Trường</option><option value="28">Hoàng Nam Cường</option><option value="29">Hoàng Nam Nhật</option><option value="279">Hoàng Thanh Tùng</option><option value="31">Hoàng Thị Ngọc Trang</option><option value="30">Hoàng Thị Điệp</option><option value="235">Hoàng Văn Mạnh</option><option value="362">Hoàng Văn Thắng</option><option value="32">Hoàng Văn Xiêm</option><option value="144">Hoàng Xuân Tùng</option><option value="124">Huỳnh Bá Phúc</option><option value="1">Không rõ</option><option value="34">Kiều Hải Đăng</option><option value="35">Kiều Văn Tuyên</option><option value="36">Lâm Sinh Công</option><option value="280">Lê Anh Cường</option><option value="252">Lê Bằng Giang</option><option value="137">Lê Hoàng Quỳnh</option><option value="136">Lê Hồng Hải</option><option value="150">Lê Huy Hàm</option><option value="221">Lê Khánh Trình</option><option value="237">Lê Minh Khôi</option><option value="207">Lê Nguyên Khôi</option><option value="303">Lê Nguyên Long</option><option value="37">Lê Phê Đô</option><option value="290">Lê Phương Duy</option><option value="197">Lê Quang Hiếu</option><option value="38">Lê Sỹ Nguyên Hoàng</option><option value="39">Lê Sỹ Vinh</option><option value="155">Lê Thanh Hà</option><option value="40">Lê Thị Hải Hà</option><option value="195">Lê Thị Hiên</option><option value="199">Lê Thị Hợi</option><option value="140">Lê Thị Phương</option><option value="307">Lê Thị Tuân</option><option value="341">Lê Thị Vinh</option><option value="187">Lê Thùy Dương</option><option value="41">Lê Trần Mạnh</option><option value="219">Lê Trung Thành</option><option value="287">Lê Văn Cường</option><option value="217">Lê Văn Tuân</option><option value="179">Lê Việt Cường</option><option value="260">Lê Việt Quân</option><option value="43">Lê Vũ Hà</option><option value="42">Lê Xuân Lực</option><option value="152">Lê Đình Anh</option><option value="146">Lê Đình Thanh</option><option value="249">Lê Đức Duy</option><option value="222">Lê Đức Trọng</option><option value="325">Lư Thị Thanh Lê</option><option value="132">Lương Sơn Bá</option><option value="337">Lương Thùy Liên</option><option value="191">Lưu Mạnh Hà</option><option value="45">Ma Thị Châu</option><option value="44">Mai Anh Tuấn</option><option value="346">Mai K Đa</option><option value="141">Mai Linh</option><option value="46">Mẫn Đức Chức</option><option value="75">Nghiêm Nguyễn Việt Dũng</option><option value="239">Ngô Lê Minh</option><option value="274">Ngô Minh Hương</option><option value="267">Ngô Thái Hà</option><option value="181">Ngô Thị Duyên</option><option value="339">Ngô Thị Phượng</option><option value="297">Ngô Viết Hoàn</option><option value="238">Ngô Xuân Trường</option><option value="363">Ngô Đăng Toàn</option><option value="76">Ngô Đình Đạt</option><option value="354">Nguyễn Anh Tuấn</option><option value="328">Nguyễn Bá Thành</option><option value="272">Nguyễn Bích Vân</option><option value="47">Nguyễn Chí Thảo</option><option value="356">Nguyễn Duy Cường</option><option value="51">Nguyễn Hải Châu</option><option value="52">Nguyễn Hải Long</option><option value="277">Nguyễn Hải Toàn</option><option value="165">Nguyễn Hoài Sơn</option><option value="291">Nguyễn Hoàng Dương</option><option value="229">Nguyễn Hoàng Quân</option><option value="130">Nguyễn Hoàng Thạch</option><option value="53">Nguyễn Hồng Thịnh</option><option value="304">Nguyễn Hương Ngọc</option><option value="148">Nguyễn Hữu Đức</option><option value="54">Nguyễn Huy Tiệp</option><option value="257">Nguyễn Huỳnh Trà My</option><option value="278">Nguyễn Khánh Ly</option><option value="201">Nguyễn Kiêm Hùng</option><option value="55">Nguyễn Kiên Cường</option><option value="205">Nguyễn Lê Khanh</option><option value="56">Nguyễn Linh Trung</option><option value="261">Nguyễn Lưu Tú</option><option value="220">Nguyễn Minh Trần</option><option value="348">Nguyễn Minh Tuấn</option><option value="57">Nguyễn Minh Đức</option><option value="160">Nguyễn Nam Hoàng</option><option value="173">Nguyễn Ngọc An</option><option value="182">Nguyễn Ngọc Diệp</option><option value="159">Nguyễn Ngọc Hóa</option><option value="268">Nguyễn Ngọc Quỳnh</option><option value="133">Nguyễn Ngọc Tân</option><option value="163">Nguyễn Phương Hoài Nam</option><option value="301">Nguyễn Phương Liên</option><option value="166">Nguyễn Phương Thái</option><option value="334">Nguyễn Quang Hưng</option><option value="59">Nguyễn Quang Vinh</option><option value="185">Nguyễn Quang Định</option><option value="58">Nguyễn Quang Đức</option><option value="242">Nguyễn Quốc An</option><option value="94">Nguyễn Sơn Long</option><option value="250">Nguyễn Thái Dương</option><option value="350">Nguyễn Thanh Bình</option><option value="288">Nguyễn Thanh Diên</option><option value="151">Nguyễn Thanh Thủy</option><option value="216">Nguyễn Thanh Tùng</option><option value="60">Nguyễn Thế Hoàng Anh</option><option value="285">Nguyễn Thị Bích</option><option value="243">Nguyễn Thị Cẩm Vân</option><option value="61">Nguyễn Thị Hậu</option><option value="364">Nguyễn Thị Hoa</option><option value="353">Nguyễn Thị Hoài</option><option value="355">Nguyễn Thị Kim Thanh</option><option value="125">Nguyễn Thị Lan</option><option value="336">Nguyễn Thị Liên</option><option value="198">Nguyễn Thị Minh Hồng</option><option value="245">Nguyễn Thị Minh Thanh</option><option value="298">Nguyễn Thị Năm Hoàng</option><option value="174">Nguyễn Thị Ngọc Ánh</option><option value="269">Nguyễn Thị Ngọc Diệp</option><option value="167">Nguyễn Thị Nhật Thanh</option><option value="349">Nguyễn Thị Như</option><option value="92">Nguyễn Thị Như Quỳnh</option><option value="314">Nguyễn Thị Như Trang</option><option value="62">Nguyễn Thị Quỳnh</option><option value="347">Nguyễn Thị Thanh Huyền</option><option value="309">Nguyễn Thị Thanh Tâm</option><option value="63">Nguyễn Thị Thanh Vân</option><option value="127">Nguyễn Thị Thu Hoài</option><option value="66">Nguyễn Thị Thu Hường</option><option value="312">Nguyễn Thị Thu Thủy</option><option value="236">Nguyễn Thị Thủy</option><option value="65">Nguyễn Thị Thuỳ Linh</option><option value="313">Nguyễn Thị Thuỷ Tiên</option><option value="211">Nguyễn Thị Yến Mai</option><option value="67">Nguyễn Thu Hằng</option><option value="294">Nguyễn Thu Hiền</option><option value="68">Nguyễn Thu Trang</option><option value="302">Nguyễn Thùy Linh</option><option value="340">Nguyễn Thuý Vân</option><option value="69">Nguyễn Tiến Đạt</option><option value="324">Nguyễn Tô Lan</option><option value="70">Nguyễn Trí Thành</option><option value="71">Nguyễn Tuấn Cảnh</option><option value="317">Nguyễn Tuấn Cường</option><option value="176">Nguyễn Văn Bắc</option><option value="202">Nguyễn Văn Hùng</option><option value="275">Nguyễn Văn Phi</option><option value="72">Nguyễn Văn Quang</option><option value="73">Nguyễn Văn Sơn</option><option value="225">Nguyễn Văn Thắng</option><option value="223">Nguyễn Văn Thương</option><option value="142">Nguyễn Văn Vinh</option><option value="213">Nguyễn Văn Yên</option><option value="96">Nguyễn Việt Anh</option><option value="282">Nguyễn Việt Cường</option><option value="74">Nguyễn Việt Hà</option><option value="147">Nguyễn Việt Tân</option><option value="251">Nguyễn Vũ Bình Dương</option><option value="333">Nguyễn Vũ Hảo</option><option value="188">Nguyễn Xuân Dương</option><option value="224">Nguyễn Đại Thọ</option><option value="48">Nguyễn Đăng Cơ</option><option value="259">Nguyễn Đăng Minh Phương</option><option value="49">Nguyễn Đăng Phú</option><option value="305">Nguyễn Đào Nguyên</option><option value="162">Nguyễn Đình Lãm</option><option value="149">Nguyễn Đình Đức</option><option value="139">Nguyễn Đức Anh</option><option value="246">Nguyễn Đức Anh (CN)</option><option value="50">Nguyễn Đức Cường</option><option value="256">Nguyễn Đức Hoàng Long</option><option value="214">NULLPTR</option><option value="189">NULLPTR</option><option value="81">Phạm Anh Tuân</option><option value="258">Phạm Bảo Phúc</option><option value="264">Phạm Bảo Sơn</option><option value="232">Phạm Cẩm Ngọc</option><option value="170">Phạm Châu Thùy</option><option value="82">Phạm Công Nhất</option><option value="84">Phạm Duy Hưng</option><option value="345">Phạm Hoàng Giang</option><option value="33">Phạm Hoàng Vân</option><option value="97">Phạm Hồng Hà</option><option value="208">Phạm Mạnh Linh</option><option value="168">Phạm Mạnh Thắng</option><option value="85">Phạm Minh Hoàng</option><option value="299">Phạm Minh Huyền</option><option value="86">Phạm Minh Triển</option><option value="161">Phạm Ngọc Hùng</option><option value="87">Phạm Ngọc Thảo</option><option value="316">Phạm Phương Chi</option><option value="344">Phạm Quỳnh Chinh</option><option value="358">Phạm Thanh Hà</option><option value="320">Phạm Thành Hưng</option><option value="365">Phạm Thị Liên</option><option value="244">Phạm Thị Mai Bảo</option><option value="128">Phạm Thị Quỳnh</option><option value="88">Phạm Thị Quỳnh Trang</option><option value="361">Phạm Thu Trang</option><option value="89">Phạm Tiến Du</option><option value="281">Phạm Tiến Lâm</option><option value="90">Phạm Tuấn Dũng</option><option value="289">Phạm Vân Dung</option><option value="321">Phạm Văn Hưng</option><option value="322">Phạm Văn Khoái</option><option value="172">Phạm Văn Vĩnh</option><option value="308">Phạm Xuân Thạch</option><option value="91">Phạm Đình Tuân</option><option value="83">Phạm Đức Quang</option><option value="77">Phan Hải Đăng</option><option value="78">Phan Hoàng Anh</option><option value="79">Phan Quốc Nguyên</option><option value="209">Phan Thế Long</option><option value="338">Phan Thị Hoàng Mai</option><option value="295">Phan Thị Thu Hiền</option><option value="158">Phan Xuân Hiếu</option><option value="80">Phong Thị Thu Huyền</option><option value="323">Phùng Ngọc Kiên</option><option value="218">Phùng Đức Thuận</option><option value="273">Quách Công Hoàng</option><option value="93">Tạ Cao Nguyên</option><option value="300">Tạ Thị Thanh Huyền</option><option value="180">Tạ Việt Cường</option><option value="95">Thầy Thắng Cơ Học</option><option value="115">Tô Văn Khánh</option><option value="227">Trần Cao Quyền</option><option value="203">Trần Cường Hưng</option><option value="138">Trần Hoàng Việt</option><option value="270">Trần Hồng Việt</option><option value="329">Trần Khánh Thành</option><option value="134">Trần Mai Vũ</option><option value="99">Trần Mạnh Cường</option><option value="100">Trần Mậu Danh</option><option value="351">Trần Minh Hiếu</option><option value="335">Trần Ngọc Liêu</option><option value="255">Trần Ngọc Trúc Linh</option><option value="332">Trần Ngọc Vương</option><option value="330">Trần Nho Thìn</option><option value="101">Trần Như Chí</option><option value="102">Trần Quốc Long</option><option value="230">Trần Quốc Quân</option><option value="103">Trần Thanh Hải</option><option value="104">Trần Thanh Hằng</option><option value="331">Trần Thanh Thuỷ</option><option value="105">Trần Thanh Tùng</option><option value="315">Trần Thị An</option><option value="342">Trần Thị Hạnh</option><option value="106">Trần Thị Lan Hương</option><option value="177">Trần Thị Minh Châu</option><option value="311">Trần Thị Thục</option><option value="107">Trần Thị Thúy Quỳnh</option><option value="109">Trần Thị Thy Trà</option><option value="357">Trần Thị Điểu</option><option value="110">Trần Thu Hà</option><option value="283">Trần Tiến Hải</option><option value="111">Trần Trọng Hiếu</option><option value="210">Trần Trúc Mai</option><option value="284">Trần Văn Khánh</option><option value="164">Trần Văn Quảng</option><option value="98">Trần Đại Tân</option><option value="206">Trần Đăng Khoa</option><option value="112">Trần Đức Đông</option><option value="271">Triệu Hải Long</option><option value="113">Trịnh Anh Vũ</option><option value="326">Trịnh Khắc Mạnh</option><option value="114">Trịnh Ngọc Huỳnh</option><option value="169">Trương Ninh Thuận</option><option value="247">Trương Thị Kiều Anh</option><option value="352">Trương Thị Quỳnh Hoa</option><option value="254">Trương Xuân Hiếu</option><option value="64">VNU-UL</option><option value="157">Võ Đình Hiếu</option><option value="116">Vũ Bá Duy</option><option value="117">Vũ Duy Thanh</option><option value="118">Vũ Minh Anh</option><option value="119">Vũ Ngọc Linh</option><option value="226">Vũ Nguyên Thức</option><option value="120">Vũ Quốc Tuấn</option><option value="231">Vũ Thị Hồng Nhạn</option><option value="204">Vũ Thị Huyền</option><option value="121">Vũ Thị Thao</option><option value="175">Vũ Thị Thùy Anh</option><option value="262">Vũ Trọng Thanh</option><option value="200">Vũ Văn Huy</option><option value="253">Vũ Đức Hiếu</option><option value="122">Vũ Đức Thắng</option><option value="145">Vũ Đức Trung</option><option value="123">Vương Thị Hải Yến</option><option value="13">Đàm Quang Thắng</option><option value="9">Đặng Anh Việt</option><option value="10">Đặng Cao Cường</option><option value="11">Đặng Hữu Chung</option><option value="192">Đặng Thanh Hải</option><option value="153">Đặng Thế Ba</option><option value="359">Đặng Thị Lan</option><option value="143">Đặng Trần Bình</option><option value="12">Đặng Văn Hiếu</option><option value="156">Đặng Đức Hạnh</option><option value="14">Đào Mạnh Đạt</option><option value="241">Đào Minh Thư</option><option value="22">Đào Tấn Lâm</option><option value="15">Đào Thảo</option><option value="18">Đinh Bảo Minh</option><option value="19">Đinh Sĩ Tiệp</option><option value="296">Đinh Thanh Hiếu</option><option value="20">Đinh Thị Thái Mai</option><option value="196">Đinh Trần Hiệp</option><option value="21">Đinh Triều Dương</option><option value="184">Đỗ Huy Điệp</option><option value="233">Đỗ Nam</option><option value="16">Đỗ Ngọc Minh</option><option value="129">Đỗ Thái Dương</option><option value="154">Đỗ Thị Hương Giang</option><option value="17">Đỗ Thị Thu Hà</option><option value="293">Đỗ Thu Hiền</option><option value="276">Đỗ Thu Uyên</option><option value="183">Đỗ Đức Đông</option><option value="318">Đoàn Ánh Dương</option><option value="360">Đoàn Thu Nguyệt</option><option value="327">Đoàn Đức Phương</option><option value="215">Đồng Quốc Việt</option>            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="course" class="form-label">Chọn môn học</label>
+            <select id="course" name="course" class="form-select select2" required>
+                <option value="">-- Chọn môn học --</option>
+                <option value="2">An toàn và an ninh mạng</option><option value="3">Bóng đá</option><option value="131">Các chủ đề hiện đại của HTTT</option><option value="5">Các chuyên đề trong KHMT</option><option value="104">Các hệ thống thương mại điện tử</option><option value="6">Các thuật toán đồ thị và ứng dụng</option><option value="109">Các vấn đề hiện đại trong KHMT</option><option value="4">Cảm biến và Đo lường cho Robot
+</option><option value="9">Cấu trúc dữ liệu và giải thuật</option><option value="94">Chủ nghĩa xã hội khoa học</option><option value="8">Chương trình dịch</option><option value="105">Chuyên nghiệp trong công nghệ</option><option value="7">Chuyên đề Công nghệ</option><option value="130">Cơ sở các hệ thống thông tin</option><option value="12">Cơ sở dữ liệu</option><option value="13">Cơ sở toán học của trí tuệ nhân tạo</option><option value="10">Công nghệ Blockchain</option><option value="11">Công nghệ phần mềm</option><option value="137">Dự án</option><option value="16">Dự án công nghệ</option><option value="17">Dự án khoa học</option><option value="21">Gia công và thiết kế CAD/CAM/CAE</option><option value="22">Giải Tích 1 + 2</option><option value="19">Giáo dục quốc phòng – an ninh</option><option value="20">Giáo dục thể chất cơ bản</option><option value="24">Giới thiệu trí tuệ nhân tạo</option><option value="106">Hệ quản trị cơ sở dữ liệu</option><option value="25">Học máy</option><option value="26">Học sâu và Ứng dụng</option><option value="120">Khai phá dữ liệu</option><option value="134">Khai phá dữ liệu hướng lĩnh vực</option><option value="125">Khoa học dịch vụ</option><option value="30">Khoa học dữ liệu</option><option value="31">Khoa học nhận thức</option><option value="32">Khoa học thần kinh</option><option value="112">Khóa luận tốt nghiệp</option><option value="1">Không rõ</option><option value="33">Kiểm thử và đảm bảo chất lượng phần mềm</option><option value="27">Kiến trúc hướng dịch vụ</option><option value="28">Kiến trúc máy tính</option><option value="29">Kiến trúc phần mềm</option><option value="34">Kinh tế chính trị Mác - Lênin</option><option value="35">Kinh tế vi mô</option><option value="36">Kinh tế vĩ mô</option><option value="37">Kỹ năng khởi nghiệp</option><option value="40">Kỹ nghệ yêu cầu</option><option value="39">Kỹ thuật và công nghệ dữ liệu lớn</option><option value="95">Kỹ thuật điện</option><option value="38">Kỹ thuật điều khiển</option><option value="41">Lập trình hướng đối tượng</option><option value="127">Lập trình mạng</option><option value="42">Lập trình nâng cao</option><option value="115">Lập trình nhúng và thời gian thực</option><option value="44">Lịch sử thiết kế</option><option value="43">Lịch sử Đảng cộng sản Việt Nam</option><option value="46">Lý thuyết thông tin</option><option value="126">Mạng không dây</option><option value="47">Mạng máy tính</option><option value="23">Mạng truyền thông di động</option><option value="88">Mạng truyền thông máy tính 1 + 2</option><option value="48">Mật mã và An toàn thông tin</option><option value="100">Mô phỏng và mô hình hoá</option><option value="49">Mỹ học đại cương
+</option><option value="55">Nguyên lí thị giác</option><option value="53">Nguyên lý hệ điều hành</option><option value="54">Nguyên lý kỹ thuật điện tử</option><option value="98">Nguyên lý marketing</option><option value="50">Nhà nước và Pháp luật đại cương</option><option value="51">Nhập môn kỹ thuật công nghệ</option><option value="52">Nhập môn lập trình</option><option value="135">Phân tích dữ liệu dự báo</option><option value="60">Phân tích Dữ liệu không gian và Ứng dụng</option><option value="61">Phân tích dữ liệu trực quan</option><option value="133">Phân tích kinh doanh</option><option value="136">Phân tích mạng phương tiện xã hội trong kinh doanh</option><option value="124">Phân tích thiết kế các HTTT</option><option value="119">Phân tích và thiết kế hướng đối tượng</option><option value="45">Pháp luật về sở hữu trí tuệ</option><option value="118">Phát triển các hệ thống thông minh</option><option value="58">Phát triển ứng dụng di động</option><option value="107">Phát triển ứng dụng doanh nghiệp</option><option value="56">Phát triển ứng dụng Internet of Things</option><option value="57">Phát triển ứng dụng Web</option><option value="59">Phát triển ứng dụng điện toán đám mây</option><option value="114">Phương pháp hình thức</option><option value="62">Phương pháp tính</option><option value="138">Phương pháp tính trong kỹ thuật</option><option value="132">Quản lý dự án HTTT</option><option value="110">Quản lý dự án phần mềm</option><option value="63">Tác tử thông minh và Rô-bốt</option><option value="65">Thị giác máy</option><option value="117">Thiết kế giao diện người dùng</option><option value="122">Thiết kế và phân tích thực nghiệm</option><option value="64">Thiết kế và Triển khai các Hệ thống ứng dụng Học máy</option><option value="116">Thu thập và phân tích yêu cầu</option><option value="111">Thuật toán nâng cao và ứng dụng</option><option value="108">Thực hành hệ điều hành mạng</option><option value="66">Thực hành phát triển hệ thống Trí tuệ nhân tạo
+</option><option value="67">Thực hành thiết kế và xây dựng Robot 1</option><option value="68">Thực hành thiết kế và xây dựng Robot 2</option><option value="113">Thực tập chuyên ngành</option><option value="69">Thực tập doanh nghiệp</option><option value="70">Thực tập kỹ thuật điện tử</option><option value="123">Tích hợp dịch vụ</option><option value="78">Tiếng Anh B1</option><option value="79">Tiếng Anh B2</option><option value="77">Tín hiệu và hệ thống</option><option value="71">Tin học cơ sở</option><option value="129">Tin học y tế</option><option value="72">Tin sinh học ứng dụng</option><option value="76">Toán học rời rạc</option><option value="74">Toán kỹ thuật</option><option value="73">Toán ứng dụng trong kỹ thuật Robot</option><option value="80">Tối ưu hóa</option><option value="83">Trải nghiệm và khám phá về Robot</option><option value="121">Trí tuệ kinh doanh</option><option value="81">Trí tuệ nhân tạo</option><option value="82">Triết học Mác - Lênin</option><option value="75">Truyền thông số và mã hóa</option><option value="99">Truyền thông vô tuyến</option><option value="128">Truyền thông đa phương tiện</option><option value="84">Tư duy thiết kế và Công thái học</option><option value="85">Tư tưởng Hồ Chí Minh</option><option value="86">Tương tác người máy</option><option value="87">Vật lý đại cương 1 + 2</option><option value="89">Vẽ kỹ thuật</option><option value="90">Võ cổ truyền</option><option value="96">Xác suất thống kê</option><option value="91">Xử lý ảnh</option><option value="92">Xử lý ngôn ngữ tự nhiên</option><option value="93">Xử lý tiếng nói</option><option value="103">Xử lý tín hiệu số</option><option value="97">Đại số</option><option value="14">Điện toán đám mây</option><option value="101">Điện tử số</option><option value="102">Điện tử tương tự</option><option value="15">Đồ họa máy tính</option><option value="18">Động học và động lực học</option>            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="score" class="form-label">Điểm đánh giá (1-10)</label>
+            <select id="score" name="score" class="form-select" required>
+                <option value="1">1 - Rất rất rất tệ</option>
+                <option value="2">2 - Rất tệ</option>
+                <option value="3">3 - Tệ</option>
+                <option value="4">4 - Khá tệ</option>
+                <option value="5" selected>5 - Trung bình</option>
+                <option value="6">6 - Khá tốt</option>
+                <option value="7">7 - Tốt</option>
+                <option value="8">8 - Rất tốt</option>
+                <option value="9">9 - Xuất sắc</option>
+                <option value="10">10 - Hoàn hảo</option>
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="summernote" class="form-label">Nội dung đánh giá</label>
+            <textarea id="summernote" name="content" required></textarea>
+        </div>
+        
+        <div class="form-check my-4 mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="agreeTerms" required>
+            <label class="form-check-label" for="agreeTerms">
+                Tôi đã đọc và đồng ý với
+                <a href="terms.php.html" target="_blank">Điều khoản & Điều kiện</a>
+                và <a href="privacy.php.html" target="_blank">Chính sách Bảo mật</a>.
+            </label>
+        </div
+        
+        
+        <div class="form-group mb-3">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAABpi2Q1FZOPTu1Df"></div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+    </form>
+
+    <div id="result" class="mt-3"></div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#notification").remove();
+        // Khởi tạo select2 trên các select có class select2
+        $('.select2').select2({
+            theme: 'bootstrap4',
+            width: '100%',
+            placeholder: 'Chọn...',
+            allowClear: true
+        });
+
+        // Khởi tạo Summernote
+        $('#summernote').summernote({
+            height: 200,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['insert', ['link']],
+            ]
+        });
+
+        // Xử lý submit form qua AJAX
+        $('#review-form').on('submit', function(e) {
+            e.preventDefault();
+
+            // Lấy token Captcha
+            var captchaToken = turnstile.getResponse();
+        
+            if (!captchaToken) {
+                alert("Vui lòng xác minh Captcha.");
+                return;
+            }
+
+            if(turnstile.isExpired()) {
+                turnstile.reset();
+                setTimeout(function() {
+                    $('#review-form').submit();
+                }, 1000);
+                return;
+            }
+
+            if (!$("#agreeTerms").is(":checked")) {
+                alert("Vui lòng xác nhận rằng bạn đã đọc và đồng ý với Điều khoản & Chính sách.");
+                $("#agreeTerms").focus()[0].scrollIntoView({ behavior: "smooth", block: "center" });
+                return; // thêm return để chặn submit
+            }
+
+            // Thêm token vào form (nếu chưa có)
+            if ($("#captchaToken").length === 0) {
+                $('<input>').attr({
+                    type: 'hidden',
+                    id: 'captchaToken',
+                    name: 'cf-turnstile-response',
+                    value: captchaToken
+                }).appendTo('#review-form');
+            } else {
+                $("#captchaToken").val(captchaToken);
+            }
+
+            // Gửi form
+            $.post('ajax_submit.php', $(this).serialize(), function(data) {
+                $('#result').html('<div class="alert alert-success">' + data + '</div>');
+                $('#summernote').summernote('reset');
+                window.location.href = "/";
+            }).fail(function() {
+                $('#result').html('<div class="alert alert-danger">Lỗi hệ thống, vui lòng thử lại.</div>');
+            });
+        });
+
+
+    });
+</script>
+
+</div> <!-- end .container -->
+
+<footer class="bg-dark border-top mt-5 pt-4 pb-3 text-light">
+    <div class="container">
+        <div class="row">
+
+            <!-- Cột 1: Giới thiệu -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5 class="text-light">Review ĐHQGHN</h5>
+                <p class="small mb-1">
+                    Nền tảng chia sẻ đánh giá giảng viên và môn học hoàn toàn ẩn danh, do cộng đồng sinh viên đóng góp.
+                </p>
+                <p class="small">
+                    Mọi nội dung do người dùng gửi. Chúng tôi không chịu trách nhiệm về nội dung các đánh giá.
+                </p>
+            </div>
+
+            <!-- Cột 2: Liên hệ -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên hệ</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="terms.php.html" class="text-warning">Điều khoản & Điều kiện</a></li>
+                    <li class="mb-2"><a href="privacy.php.html" class="text-warning">Chính sách Bảo mật</a></li>
+                    <li class="mb-2"><a href="status.php.html" class="text-warning">Trạng thái hệ thống</a></li>
+                    <li>
+                        <a href="https://www.dmca.com/Protection/Status.aspx?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-07.png?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Liên kết hữu ích -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên kết hữu ích</h6>
+                <ul class="list-unstyled small text-light">
+                    <li class="mb-2"><a href="index.php.html" class="text-warning">Trang chủ</a></li>
+                    <li class="mb-2"><a href="submit.php.html" class="text-warning">Gửi đánh giá</a></li>
+                    <li class="mb-2"><a href="search.php.html" class="text-warning">Tìm kiếm</a></li>
+                    <li class="mb-2"><a href="contact.php.html" class="text-warning">Liên hệ</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-center small mt-3">
+            &copy; 2025 DHQG.XYZ. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

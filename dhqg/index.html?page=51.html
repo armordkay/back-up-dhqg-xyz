@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Review giảng viên VNU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="title" name="title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="description" name="description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="keywords" name="keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="url" name="url" content="https://dhqg.xyz">
+    <meta property="type" name="type" content="website">
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="og:title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="og:description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="og:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="og:url" content="https://dhqg.xyz">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Đánh giá giảng viên ĐHQGHN">
+    <meta name="twitter:description" content="Review giảng viên, môn học ĐHQGHN không cần đăng nhập.">
+    <meta name="twitter:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta name="twitter:image" content="https://dhqg.xyz">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.js"></script>
+
+
+    <!-- CSS custom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="index.php.html">Review giảng viên VNU</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Mở menu điều hướng">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto nav-pills m-2">
+                <li class="nav-item">
+                    <a href="index.php.html" class="nav-link active p-2" aria-current="page">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="submit.php.html">Đăng đánh giá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="search.php.html">Tìm kiếm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container flex-grow-1">
+
+    <!-- Alert thông báo -->
+    <div class="alert alert-warning d-flex align-items-center justify-content-start gap-2" role="alert" style="cursor: pointer;" onclick="window.location.href='./submit.php'" id="notification">
+        <span class="fw-semibold">Nhấn vào đây để đăng đánh giá của bạn (Hoàn toàn ẩn danh)</span>
+    </div>
+
+
+<div class="row">
+    <!-- Cột trái -->
+    <div class="col-md-8">
+        <h4 class="mb-4">Đánh giá mới nhất</h4>
+        <div id="review-list">
+            <div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=69.html' class='text-dark'><strong>Nguyễn Tiến Đạt</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>Câu nói mồm của Đạt Béo là em đi nàm có thuộc được 1000 dòng code không mà đòi thuộc code DSA??????</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:18:34</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=69.html' class='text-dark'><strong>Nguyễn Tiến Đạt</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>Gặp thì nhót lẹ kẻo cút hết thanh xuân với triết lý đi nàm của Tiến Đạt</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:18:25</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=69.html' class='text-dark'><strong>Nguyễn Tiến Đạt</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>Nói ra thì hơi tục nhưng mà djtme Tiến Đạt :) Dạy như hạch, lên lớp méo dạy gì hết toàn ngồi cơm xơi nước xong phát biểu các triết lý khi đi nàm thì em nên như thế này em nên như thế kia. Đã thế DSA giữa kỳ còn quất cho hẳn là 6 bài code. Xử lý dữ liệu bằng Python đi lấy 2 tuần đầu để học DSA và Implement lại hết đống DSA bằng Python :) Kèm theo việc nói chuyện khá khó nghe, bạn nào nóng tính nên cân nhắc kỹ kẻo có check var. Djtme làm hẳn 8 câu lý thuyết DSA dài như lông dái tao (cụ thể là gần 50 trang :) giấy A4) đưa Đạt Béo chấm với hy vọng có thể thay thế 6 bài code l để đổi đời, nhưng không, đời l + Đạt l thì có con c mà thay thế, thay đâu d thấy thấy hối hận vì ngồi tốn đống giấy thay vì lấy lau dái :) Đã thế đhs mỗi lần muốn nt chuyện gì thì phải mail, nhắn zalo chảnh l đ chịu rep cơ. Clm bảo các em không nên vào lab sớm xong khoe hẳn là năm 4 anh mới vào lab cơ, đéo biết làm cl gì ở lab nhưng mà djtme thấy chỉ biết code code, code lần code lốn sau AI nó ỉa hết lên đầu, thay vì dạy code như vậy sao không hướng dẫn cho cách tư duy để tạo promt AI mẹ đi.Dumaa học thầy Dương xong quay đầu lại thấy Đạt Béo đúng là một trời một vực. Mấy bu em k70 vào viện AI thì nên cân nhắc trước khi var vào hệ tích cực :)) thà mấy em đăng ký nhiều tín dồn trong 1 kỳ còn hơn nhét mông vào hệ tích cực để rồi var nhau tại Xuân Thủy.</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:18:17</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=6.html' class='text-dark'><strong>Bùi Văn Vượng</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>"thầy bảo là cá nhân thầy thích những sv dám đứng lên nói là ""em không hiểu gì"", nhưng khả năng cao thằng nào làm thế chắc h đéo còn ở UET nữa rồi</p><p>&lt;hahahah"</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:17:33</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=6.html' class='text-dark'><strong>Bùi Văn Vượng</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>hôm trước thầy tridodai vì sv làm ktra như cdb nên thầy bắt đầu bật mode noi gương lão già Trần Thanh Hải r</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:17:24</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=6.html' class='text-dark'><strong>Bùi Văn Vượng</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>dạo này thầy cay nên thảm sát sinh viên r:(((</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:17:17</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=6.html' class='text-dark'><strong>Bùi Văn Vượng</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>a bảo là học anh thì không có chuyện điểm cao đâu :))</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:17:12</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=6.html' class='text-dark'><strong>Bùi Văn Vượng</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>giống toi, học đ hiểu, còn quả hỏi bài như bảo vệ đồ án. điểm chác không biết ăn chia như thế nào</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:17:09</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=6.html' class='text-dark'><strong>Bùi Văn Vượng</strong></a> – <em>Cấu trúc dữ liệu và giải thuật</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>Thầy vừa mới đi du học nước ngoài về, dạy khá khô khan, khó hiểu và rất hàn lâm? Cộng thêm quả bài tập bằng tiếng anh vừa dài vừa khắm. Ai thông minh + chăm thì thấy thầy dạy hay còn tao thì thấy ncc. Hôm nào cũng điểm danh, kiểm tra liên tục, gọi random hoặc gọi theo danh sách lớp. Thầy có tâm, nếu ai nhắn hỏi thì thầy sẽ trả lời, nhưng thầy căng vãi cả loz đcm t đéo muốn học môn của thầy đâu huhuuhuhu</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:17:05</small></div><div class='border rounded p-3 mb-3 shadow-sm'><div class='d-flex justify-content-between align-items-center mb-2'><div><a href='teacher.php%3Fid=114.html' class='text-dark'><strong>Trịnh Ngọc Huỳnh</strong></a> – <em>Nhập môn lập trình</em></div><div title='Điểm đánh giá'><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #f5c518; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span><span style="color: #ccc; font-size: 1.2em;">&#9733;</span></div></div><hr><div class='review-content'><p>đúng mấy thg nhìn hiền hiền toàn đjt con nhà ngta như thụi :))</p></div><small class='text-muted d-block mt-2'>2025-05-30 05:16:47</small></div>        </div>
+        <nav>
+  <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="index.html%3Fpage=1.html">&laquo;</a></li>
+              <li class="page-item"><a class="page-link" href="index.html%3Fpage=50.html">&lsaquo;</a></li>
+    
+          <li class="page-item ">
+        <a class="page-link" href="index.html%3Fpage=49.html">49</a>
+      </li>
+          <li class="page-item ">
+        <a class="page-link" href="index.html%3Fpage=50.html">50</a>
+      </li>
+          <li class="page-item active">
+        <a class="page-link" href="index.html%3Fpage=51.html">51</a>
+      </li>
+          <li class="page-item ">
+        <a class="page-link" href="index.html%3Fpage=52.html">52</a>
+      </li>
+          <li class="page-item ">
+        <a class="page-link" href="index.html%3Fpage=53.html">53</a>
+      </li>
+    
+          <li class="page-item"><a class="page-link" href="index.html%3Fpage=52.html">&rsaquo;</a></li>
+              <li class="page-item"><a class="page-link" href="index.html%3Fpage=88.html">&raquo;</a></li>
+      </ul>
+</nav>
+
+    </div>
+
+
+    <!-- Cột phải -->
+    <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Thống kê nhanh</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Tổng số reviews
+                        <span class="badge bg-secondary rounded-pill">877</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Môn học đã review
+                        <span class="badge bg-primary rounded-pill">90</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Giảng viên đã review
+                        <span class="badge bg-success rounded-pill">191</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Lượt truy cập hôm nay
+                        <span class="badge bg-dark rounded-pill">91,765</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Review hôm nay
+                        <span class="badge bg-danger rounded-pill">6</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <!-- Top 7 giảng viên -->
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                👨‍🏫 Giảng viên được đánh giá nhiều nhất
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class='list-group-item d-flex justify-content-between align-items-center'><a href='teacher.php%3Fid=182.html' class='text-decoration-none text-dark'>Nguyễn Ngọc Diệp</a><span class='badge bg-secondary'>36</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='teacher.php%3Fid=124.html' class='text-decoration-none text-dark'>Huỳnh Bá Phúc</a><span class='badge bg-secondary'>25</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='teacher.php%3Fid=37.html' class='text-decoration-none text-dark'>Lê Phê Đô</a><span class='badge bg-secondary'>19</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='teacher.php%3Fid=96.html' class='text-decoration-none text-dark'>Nguyễn Việt Anh</a><span class='badge bg-secondary'>17</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='teacher.php%3Fid=70.html' class='text-decoration-none text-dark'>Nguyễn Trí Thành</a><span class='badge bg-secondary'>16</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='teacher.php%3Fid=108.html' class='text-decoration-none text-dark'>Dư Thành Hưng</a><span class='badge bg-secondary'>14</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='teacher.php%3Fid=11.html' class='text-decoration-none text-dark'>Đặng Hữu Chung</a><span class='badge bg-secondary'>13</span></li>            </ul>
+        </div>
+
+        <!-- Top 7 môn học -->
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                📚 Môn học được đánh giá nhiều nhất
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class='list-group-item d-flex justify-content-between align-items-center'><a href='course.php%3Fid=9.html' class='text-decoration-none text-dark'>Cấu trúc dữ liệu và giải thuật</a><span class='badge bg-secondary'>65</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='course.php%3Fid=22.html' class='text-decoration-none text-dark'>Giải Tích 1 + 2</a><span class='badge bg-secondary'>64</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='course.php%3Fid=87.html' class='text-decoration-none text-dark'>Vật lý đại cương 1 + 2</a><span class='badge bg-secondary'>56</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='course.php%3Fid=41.html' class='text-decoration-none text-dark'>Lập trình hướng đối tượng</a><span class='badge bg-secondary'>42</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='course.php%3Fid=28.html' class='text-decoration-none text-dark'>Kiến trúc máy tính</a><span class='badge bg-secondary'>39</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='course.php%3Fid=85.html' class='text-decoration-none text-dark'>Tư tưởng Hồ Chí Minh</a><span class='badge bg-secondary'>37</span></li><li class='list-group-item d-flex justify-content-between align-items-center'><a href='course.php%3Fid=12.html' class='text-decoration-none text-dark'>Cơ sở dữ liệu</a><span class='badge bg-secondary'>33</span></li>            </ul>
+        </div>
+    </div>
+</div>
+
+</div> <!-- end .container -->
+
+<footer class="bg-dark border-top mt-5 pt-4 pb-3 text-light">
+    <div class="container">
+        <div class="row">
+
+            <!-- Cột 1: Giới thiệu -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5 class="text-light">Review ĐHQGHN</h5>
+                <p class="small mb-1">
+                    Nền tảng chia sẻ đánh giá giảng viên và môn học hoàn toàn ẩn danh, do cộng đồng sinh viên đóng góp.
+                </p>
+                <p class="small">
+                    Mọi nội dung do người dùng gửi. Chúng tôi không chịu trách nhiệm về nội dung các đánh giá.
+                </p>
+            </div>
+
+            <!-- Cột 2: Liên hệ -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên hệ</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="terms.php.html" class="text-warning">Điều khoản & Điều kiện</a></li>
+                    <li class="mb-2"><a href="privacy.php.html" class="text-warning">Chính sách Bảo mật</a></li>
+                    <li class="mb-2"><a href="status.php.html" class="text-warning">Trạng thái hệ thống</a></li>
+                    <li>
+                        <a href="https://www.dmca.com/Protection/Status.aspx?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-07.png?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Liên kết hữu ích -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên kết hữu ích</h6>
+                <ul class="list-unstyled small text-light">
+                    <li class="mb-2"><a href="index.php.html" class="text-warning">Trang chủ</a></li>
+                    <li class="mb-2"><a href="submit.php.html" class="text-warning">Gửi đánh giá</a></li>
+                    <li class="mb-2"><a href="search.php.html" class="text-warning">Tìm kiếm</a></li>
+                    <li class="mb-2"><a href="contact.php.html" class="text-warning">Liên hệ</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-center small mt-3">
+            &copy; 2025 DHQG.XYZ. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

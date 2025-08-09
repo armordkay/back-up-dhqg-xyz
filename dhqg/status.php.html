@@ -1,0 +1,64 @@
+
+        
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>System status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container my-5">
+    
+    
+    <h2 class="mb-4">System status</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Date:</strong> 09/08/2025 04:55:27</li>
+        <li class="list-group-item"><strong>Timezone:</strong> Asia/Ho_Chi_Minh</li>
+        <li class="list-group-item"><strong>Uptime:</strong> <span id="uptime">Loading...</span></li>
+        <li class="list-group-item"><strong>Webserver:</strong> Apache 2.4.62</li>
+        <li class="list-group-item"><strong>PHP Version:</strong> 8.2.27</li>
+        <li class="list-group-item"><strong>OS:</strong> Linux Ubuntu 22.04.5 LTS</li>
+        <li class="list-group-item"><strong>CPU:</strong> AMD EPYC 7763</li>
+        <li class="list-group-item"><strong>Clock speed:</strong> 2.60 GHz</li>
+        <li class="list-group-item"><strong>Cores:</strong> 64</li>
+        <li class="list-group-item"><strong>Threads:</strong> 128</li>
+        <li class="list-group-item"><strong>Memory:</strong> 2.11 GB / 128 GB</li>
+        <li class="list-group-item"><strong>Memory Type:</strong> DDR4 ECC</li>
+        <li class="list-group-item"><strong>Disk:</strong> 233.47 GB / 2952.47 GB</li>
+        <li class="list-group-item"><strong>Disk Type:</strong> NVMe </li>
+        <li class="list-group-item"><strong>PHP SAPI:</strong> fpm-fcgi</li>
+        <li class="list-group-item"><strong>Memory Limit:</strong> 128M</li>
+    </ul>
+
+    <footer class="text-center text-muted mt-4">
+        <small>System status - 2025-08-09 16:55:27</small>
+    </footer>
+</div>
+</body>
+<script>
+  const startTime = new Date('2024-09-05T19:37:15');
+
+  function updateUptime() {
+    const now = new Date();
+    let diff = now - startTime;  // ms
+
+    if (diff < 0) {
+      document.getElementById('uptime').textContent = "Loading...";
+      return;
+    }
+    const seconds = Math.floor(diff / 1000) % 60;
+    const minutes = Math.floor(diff / (1000 * 60)) % 60;
+    const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const formatted = `${days}d ${hours.toString().padStart(2,'0')}h ${minutes.toString().padStart(2,'0')}m ${seconds.toString().padStart(2,'0')}s`;
+
+    document.getElementById('uptime').textContent = formatted;
+  }
+
+  updateUptime();
+  setInterval(updateUptime, 1000);
+</script>
+</html>

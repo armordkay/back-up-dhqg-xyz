@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Review giảng viên VNU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="title" name="title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="description" name="description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="keywords" name="keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="url" name="url" content="https://dhqg.xyz">
+    <meta property="type" name="type" content="website">
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="og:title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="og:description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="og:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="og:url" content="https://dhqg.xyz">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Đánh giá giảng viên ĐHQGHN">
+    <meta name="twitter:description" content="Review giảng viên, môn học ĐHQGHN không cần đăng nhập.">
+    <meta name="twitter:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta name="twitter:image" content="https://dhqg.xyz">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.js"></script>
+
+
+    <!-- CSS custom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="index.php.html">Review giảng viên VNU</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Mở menu điều hướng">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto nav-pills m-2">
+                <li class="nav-item">
+                    <a href="index.php.html" class="nav-link active p-2" aria-current="page">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="submit.php.html">Đăng đánh giá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="search.php.html">Tìm kiếm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container flex-grow-1">
+
+    <!-- Alert thông báo -->
+    <div class="alert alert-warning d-flex align-items-center justify-content-start gap-2" role="alert" style="cursor: pointer;" onclick="window.location.href='./submit.php'" id="notification">
+        <span class="fw-semibold">Nhấn vào đây để đăng đánh giá của bạn (Hoàn toàn ẩn danh)</span>
+    </div>
+
+
+<div class="container my-5">
+    
+<nav class="mb-5">
+    
+
+    
+  <h4 class="mb-3">Mục lục</h4>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="terms.php.html#section1">1. Giới thiệu chung</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section2">2. Tính chất ẩn danh</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section3">3. Nội dung do người dùng cung cấp</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section4">4. Quyền kiểm duyệt nội dung</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section5">5. Từ chối trách nhiệm</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section6">6. Quyền sở hữu trí tuệ</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section7">7. Chính sách bảo mật</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section8">8. Luật áp dụng</a></li>
+    <li class="list-group-item"><a href="terms.php.html#section9">9. Thay đổi điều khoản</a></li>
+  </ul>
+</nav>
+
+    
+  <h1 class="mb-4">Điều Khoản & Điều Kiện Sử Dụng</h1>
+
+<section class="mb-4" id="section1">
+    <h5>1. Giới thiệu chung</h5>
+    <p>Website này là một nền tảng cộng đồng cho phép người dùng chia sẻ đánh giá, nhận xét và trải nghiệm cá nhân liên quan đến các giảng viên mà họ từng tiếp xúc trong quá trình học tập. Mục tiêu của chúng tôi là tạo ra một không gian minh bạch, ẩn danh, giúp sinh viên có thêm góc nhìn trước khi lựa chọn môn học hoặc giảng viên, đồng thời cung cấp phản hồi để giảng viên có thể tham khảo và cải thiện chất lượng giảng dạy.</p>
+    <p>Website hoạt động theo nguyên tắc hoàn toàn ẩn danh, không yêu cầu đăng ký tài khoản, không lưu thông tin nhận dạng cá nhân và không truy vết người dùng. Chúng tôi không xác thực danh tính người đăng bài, cũng như không kiểm duyệt nội dung trước khi hiển thị, trừ các trường hợp vi phạm điều khoản sử dụng.</p>
+    <p>Tất cả nội dung trên website đều do cộng đồng đóng góp và chỉ mang tính tham khảo, không đại diện cho quan điểm chính thức của bất kỳ tổ chức, trường học hay cá nhân nào điều hành website. Người dùng cần tự chịu trách nhiệm khi đăng tải nội dung và khi tiếp nhận thông tin từ các bài viết khác.</p>
+    <p>Bằng việc tiếp tục truy cập hoặc sử dụng website, bạn đồng ý rằng bạn đã đọc, hiểu và chấp nhận mọi điều khoản và điều kiện sử dụng được nêu trong trang này.</p>
+  </section>
+
+<section class="mb-4" id="section2">
+  <h5>2. Tính chất ẩn danh</h5>
+
+  <p>Website được thiết kế và vận hành với <strong>nguyên tắc hoạt động ẩn danh tuyệt đối</strong> đối với tất cả người dùng. Cụ thể:</p>
+
+  <ul>
+    <li class="mb-2">
+      <strong>2.1. Không yêu cầu đăng nhập:</strong>
+      <p class="mb-1 ms-3">Người dùng không cần tạo tài khoản, không cần đăng nhập, và không cần cung cấp bất kỳ thông tin định danh nào (như tên, email, số điện thoại, tài khoản mạng xã hội, v.v.) để sử dụng các chức năng chính như đọc đánh giá, đăng bài, hoặc tìm kiếm nội dung.</p>
+    </li>
+
+    <li class="mb-2">
+      <strong>2.2. Không thu thập thông tin cá nhân:</strong>
+      <p class="mb-1 ms-3">Website không có biểu mẫu nào yêu cầu người dùng cung cấp thông tin cá nhân. Chúng tôi không yêu cầu xác thực danh tính ở bất kỳ bước nào của quá trình truy cập hoặc đăng bài.</p>
+    </li>
+
+    <li class="mb-2">
+      <strong>2.3. Không lưu trữ định danh:</strong>
+      <p class="mb-1 ms-3">Các bài đăng không gắn với bất kỳ danh tính người thật, IP cụ thể, hoặc dữ liệu cá nhân nào của người viết.</p>
+      <p class="mb-1 ms-3">Nếu có lưu địa chỉ IP để bảo vệ an ninh hệ thống (chống spam, tấn công mạng), dữ liệu này sẽ:</p>
+      <ul class="ms-4">
+        <li>Không được liên kết với nội dung bài viết.</li>
+        <li>Không được sử dụng để xác định danh tính người dùng.</li>
+        <li>Tự động bị xoá sau một khoảng thời gian ngắn hoặc được mã hoá theo cơ chế bảo vệ riêng tư.</li>
+      </ul>
+    </li>
+
+    <li class="mb-2">
+      <strong>2.4. Người vận hành website ẩn danh:</strong>
+      <p class="mb-1 ms-3">Website được xây dựng và vận hành với tinh thần <em>phi tập trung</em>, không công khai danh tính người quản trị. Người vận hành không tương tác cá nhân với người dùng, không cung cấp thông tin định danh và không thu thập thông tin từ bất kỳ ai.</p>
+    </li>
+
+    <li class="mb-2">
+      <strong>2.5. Trách nhiệm khi sử dụng tính năng ẩn danh:</strong>
+      <p class="mb-1 ms-3">Người dùng có toàn quyền kiểm soát nội dung mình đăng tải, đồng thời hoàn toàn chịu trách nhiệm pháp lý và đạo đức về nội dung đó.</p>
+      <p class="mb-1 ms-3">Tính năng ẩn danh <strong>không được sử dụng để</strong>:</p>
+      <ul class="ms-4">
+        <li>Vu khống, bôi nhọ người khác.</li>
+        <li>Công khai thông tin cá nhân của người khác (dù đúng hay sai).</li>
+        <li>Truyền bá nội dung vi phạm pháp luật hoặc đạo đức xã hội.</li>
+      </ul>
+    </li>
+
+    <li class="mb-2">
+      <strong>2.6. Không thể chỉnh sửa hoặc xoá bài sau khi đăng:</strong>
+      <p class="mb-1 ms-3">Do không có cơ chế đăng nhập hoặc liên kết với người đăng, người dùng sẽ <strong>không thể chỉnh sửa, cập nhật hoặc xoá nội dung sau khi bài viết được gửi</strong>.</p>
+      <p class="mb-1 ms-3">Đây là một đặc điểm cần được người dùng cân nhắc kỹ lưỡng trước khi đăng nội dung.</p>
+    </li>
+
+    <li class="mb-2">
+      <strong>2.7. Giới hạn trong việc phản hồi:</strong>
+      <p class="mb-1 ms-3">Website không hỗ trợ chức năng bình luận theo tài khoản, cũng không có hệ thống phản hồi qua email.</p>
+      <p class="mb-1 ms-3">Mọi phản hồi (nếu có) đều thông qua các biểu mẫu không định danh hoặc cơ chế báo cáo vi phạm (nếu được tích hợp).</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="mb-4" id="section3">
+  <h5>3. Nội dung do người dùng cung cấp</h5>
+
+  <p>Website hoạt động dựa trên cơ chế cộng đồng: mọi nội dung hiển thị đều được người dùng tự do đăng tải, không qua xác thực danh tính, không có tài khoản hay hệ thống đăng nhập. Do đó, việc kiểm soát nội dung phụ thuộc vào ý thức và trách nhiệm của từng cá nhân. Chúng tôi quy định rõ như sau:</p>
+
+  <ul class="mt-3">
+    <li class="mb-3">
+      <strong>3.1. Người dùng hoàn toàn chịu trách nhiệm về nội dung mình đăng tải:</strong>
+      <p class="ms-3 mb-1">Khi bạn gửi bất kỳ nội dung nào lên website (bao gồm đánh giá, bình luận, mô tả, chia sẻ trải nghiệm, v.v.), bạn đồng ý rằng:</p>
+      <ul class="ms-4">
+        <li>Nội dung đó là do chính bạn tự viết ra.</li>
+        <li>Bạn tự chịu mọi trách nhiệm liên quan đến pháp luật, đạo đức, và hậu quả xã hội phát sinh từ nội dung bạn đăng.</li>
+        <li>Website không chịu trách nhiệm kiểm chứng, xác minh, hoặc đảm bảo tính đúng sai của nội dung đó.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>3.2. Những nội dung bị nghiêm cấm tuyệt đối:</strong>
+      <p class="ms-3 mb-1">Người dùng <strong>không được phép đăng tải</strong> bất kỳ nội dung nào thuộc các nhóm sau:</p>
+      <ul class="ms-4">
+        <li><strong>Xúc phạm danh dự, nhân phẩm người khác:</strong> Dùng từ ngữ lăng mạ, miệt thị, chửi bới, chế giễu cá nhân cụ thể; bôi nhọ, đồn đoán đời tư, đưa thông tin cá nhân mà không được phép.</li>
+        <li><strong>Vu khống hoặc cáo buộc không có căn cứ:</strong> Đưa ra nhận định mang tính cáo buộc sai sự thật mà không có bằng chứng rõ ràng; xuyên tạc thông tin.</li>
+        <li><strong>Công khai thông tin cá nhân trái phép:</strong> Tiết lộ tên thật, hình ảnh, số điện thoại, email, địa chỉ, tài khoản mạng xã hội... nếu chưa có sự đồng ý rõ ràng.</li>
+        <li><strong>Ngôn từ và nội dung không phù hợp:</strong> Tục tĩu, khiêu dâm, bạo lực, phân biệt chủng tộc, giới tính, tôn giáo; đe dọa hoặc khủng bố tinh thần.</li>
+        <li><strong>Vi phạm pháp luật hiện hành:</strong> Kêu gọi chống đối, xuyên tạc chính sách Nhà nước, cổ xúy hành vi trái pháp luật hoặc đạo đức.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>3.3. Về tính xác thực và khách quan của nội dung:</strong>
+      <p class="ms-3 mb-1">Người dùng được quyền trình bày trải nghiệm cá nhân và đánh giá chủ quan, tuy nhiên nên:</p>
+      <ul class="ms-4">
+        <li>Tránh nói quá, suy diễn, hoặc đưa ra khẳng định dễ gây hiểu lầm nghiêm trọng.</li>
+        <li>Giữ thái độ trung lập, xây dựng, tôn trọng – dù nội dung là tích cực hay tiêu cực.</li>
+        <li>Hạn chế dùng ngôn từ cảm tính mạnh như “kinh khủng”, “vô dụng”… trừ khi có lý do cụ thể và rõ ràng.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>3.4. Nội dung không thể chỉnh sửa sau khi đăng:</strong>
+      <p class="ms-3 mb-1">Do website không có hệ thống tài khoản, bạn sẽ <strong>không thể chỉnh sửa, cập nhật hoặc xoá nội dung sau khi đã gửi</strong>.</p>
+      <p class="ms-3 mb-1">Vui lòng đọc kỹ, cân nhắc ngôn từ trước khi nhấn “Gửi” bài viết.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>3.5. Quyền kiểm duyệt và xóa bài:</strong>
+      <p class="ms-3 mb-1">Chúng tôi có toàn quyền ẩn, xóa hoặc từ chối hiển thị bất kỳ nội dung nào vi phạm quy định nêu trên, mà không cần báo trước hoặc giải trình với người đăng.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>3.6. Giới hạn về trách nhiệm của website:</strong>
+      <p class="ms-3 mb-1">Website <strong>không đại diện, không xác thực và không chịu trách nhiệm</strong> cho bất kỳ nội dung nào được người dùng đăng tải.</p>
+      <p class="ms-3 mb-1">Mọi bài viết chỉ mang tính tham khảo và không được coi là căn cứ chính thức trong bất kỳ tình huống pháp lý hoặc hành chính nào.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="mb-4" id="section4">
+  <h5>4. Quyền kiểm duyệt nội dung</h5>
+
+  <p>Website hoạt động theo cơ chế mở và ẩn danh, tuy nhiên để đảm bảo môi trường sử dụng lành mạnh, tuân thủ pháp luật và hạn chế hành vi lợi dụng, chúng tôi giữ quyền chủ động kiểm duyệt nội dung theo các nguyên tắc sau:</p>
+
+  <ul class="mt-3">
+    <li class="mb-3">
+      <strong>4.1. Website có toàn quyền kiểm duyệt nội dung:</strong>
+      <p class="ms-3 mb-1">Ban quản trị có toàn quyền <strong>ẩn, xóa, chỉnh sửa, từ chối hiển thị</strong> hoặc <strong>vô hiệu hóa</strong> bất kỳ nội dung nào nếu thấy rằng nội dung đó:</p>
+      <ul class="ms-4">
+        <li>Vi phạm điều khoản tại mục 3.</li>
+        <li>Gây ảnh hưởng tiêu cực đến cộng đồng.</li>
+        <li>Có dấu hiệu mạo danh, lừa đảo, gây hiểu nhầm.</li>
+        <li>Gây tranh cãi vượt giới hạn dù không vi phạm pháp luật rõ ràng.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>4.2. Không cần thông báo trước hoặc giải thích sau:</strong>
+      <p class="ms-3 mb-1">Website có thể kiểm duyệt mà <strong>không cần thông báo</strong> cho người đăng và <strong>không có nghĩa vụ giải thích</strong> lý do xóa hoặc chỉnh sửa nội dung.</p>
+      <p class="ms-3 mb-1">Do website hoạt động ẩn danh, chúng tôi không thể xác định ai đã đăng nội dung nên hành động kiểm duyệt được thực hiện theo nguyên tắc nội bộ.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>4.3. Không kiểm duyệt trước khi hiển thị (post-moderation):</strong>
+      <p class="ms-3 mb-1">Nội dung <strong>được hiển thị ngay sau khi gửi</strong>, không qua kiểm duyệt trước.</p>
+      <p class="ms-3 mb-1">Việc kiểm duyệt (nếu có) chỉ diễn ra sau khi hệ thống tự phát hiện hoặc khi có <strong>báo cáo vi phạm</strong> từ người dùng.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>4.4. Cơ chế báo cáo vi phạm (nếu có):</strong>
+      <p class="ms-3 mb-1">Người dùng có thể báo cáo bài viết vi phạm thông qua nút hoặc biểu mẫu báo cáo (nếu được cung cấp).</p>
+      <p class="ms-3 mb-1">Báo cáo là <strong>ẩn danh</strong> và <strong>không yêu cầu thông tin cá nhân</strong>. Ban quản trị sẽ xem xét nhưng <strong>không có nghĩa vụ phải phản hồi hoặc xử lý</strong>.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>4.5. Website không có nghĩa vụ lưu trữ nội dung:</strong>
+      <p class="ms-3 mb-1">Chúng tôi có quyền <strong>xoá vĩnh viễn</strong>, <strong>ẩn tạm thời</strong> hoặc <strong>ngừng lưu trữ</strong> bất kỳ nội dung nào mà không cần thông báo hoặc lý do cụ thể.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>4.6. Website không kiểm duyệt theo yêu cầu cá nhân:</strong>
+      <p class="ms-3 mb-1">Chúng tôi <strong>không nhận yêu cầu chỉnh sửa, ẩn hoặc xoá bài</strong> theo đề nghị từ cá nhân hay tổ chức, trừ khi:</p>
+      <ul class="ms-4">
+        <li>Có yêu cầu hợp pháp từ cơ quan có thẩm quyền.</li>
+        <li>Nội dung rõ ràng vi phạm điều khoản hoặc pháp luật.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>4.7. Quyền điều chỉnh chính sách kiểm duyệt:</strong>
+      <p class="ms-3 mb-1">Website có toàn quyền điều chỉnh cách thức kiểm duyệt, phạm vi và mức độ can thiệp mà <strong>không cần báo trước</strong>.</p>
+      <p class="ms-3 mb-1">Các thay đổi có hiệu lực ngay với cả nội dung cũ và mới.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="mb-4" id="section5">
+  <h5>5. Từ chối trách nhiệm</h5>
+
+  <p>Việc người dùng sử dụng website đồng nghĩa với việc họ chấp nhận toàn bộ các điều khoản được nêu trong văn bản này, bao gồm cả những tuyên bố từ chối trách nhiệm dưới đây. Website hoàn toàn miễn trừ trách nhiệm đối với bất kỳ hậu quả nào phát sinh từ việc sử dụng hoặc dựa vào nội dung được đăng tải trên nền tảng.</p>
+
+  <ul class="mt-3">
+    <li class="mb-3">
+      <strong>5.1. Website không chịu trách nhiệm về tính chính xác của nội dung:</strong>
+      <p class="ms-3 mb-1">Toàn bộ nội dung trên website được tạo bởi người dùng ẩn danh và <strong>không được kiểm chứng</strong> hay xác minh tính đúng sai một cách chủ động.</p>
+      <p class="ms-3 mb-1">Chúng tôi <strong>không xác nhận</strong>, <strong>không bảo đảm</strong> và <strong>không chịu trách nhiệm pháp lý</strong> về:</p>
+      <ul class="ms-4">
+        <li>Tính chính xác, khách quan, đầy đủ hoặc cập nhật của bất kỳ nội dung nào.</li>
+        <li>Bất kỳ hiểu nhầm, tổn hại hoặc đánh giá sai lệch nào phát sinh từ việc tham khảo thông tin trên website.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>5.2. Website không chịu trách nhiệm với bên thứ ba bị ảnh hưởng:</strong>
+      <p class="ms-3 mb-1">Trong mọi trường hợp, chúng tôi <strong>miễn trừ hoàn toàn trách nhiệm</strong> đối với các tổn thất, thiệt hại, tranh chấp hoặc phản ánh từ bất kỳ bên thứ ba nào do nội dung trên website gây ra.</p>
+      <p class="ms-3 mb-1">Người dùng đăng nội dung sẽ <strong>chịu toàn bộ trách nhiệm pháp lý</strong> theo quy định pháp luật.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>5.3. Website không chịu trách nhiệm về hành động của người dùng:</strong>
+      <p class="ms-3 mb-1">Chúng tôi không chịu trách nhiệm với bất kỳ hành động, quyết định hay hệ quả nào từ phía người dùng sau khi đọc nội dung trên website, bao gồm nhưng không giới hạn:</p>
+      <ul class="ms-4">
+        <li>Thay đổi lựa chọn môn học, giảng viên.</li>
+        <li>Hành vi ảnh hưởng tiêu cực đến danh dự, uy tín hoặc quyền lợi hợp pháp của cá nhân/tổ chức.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>5.4. Website không đảm bảo dịch vụ liên tục hoặc không lỗi:</strong>
+      <p class="ms-3 mb-1">Chúng tôi <strong>không bảo đảm</strong> rằng website luôn hoạt động ổn định hoặc không bị lỗi kỹ thuật, bao gồm:</p>
+      <ul class="ms-4">
+        <li>Gián đoạn truy cập, lỗi hệ thống, chậm trễ kết nối.</li>
+        <li>Sự cố bảo mật, tấn công mạng hoặc sự can thiệp trái phép.</li>
+      </ul>
+      <p class="ms-3 mb-1">Người dùng tự chịu rủi ro khi truy cập và sử dụng website.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>5.5. Không có quan hệ pháp lý ràng buộc:</strong>
+      <p class="ms-3 mb-1">Website không đại diện cho bất kỳ cơ sở giáo dục, tổ chức hay cá nhân nào. Chúng tôi không có nghĩa vụ hỗ trợ, tư vấn hoặc can thiệp vào các vấn đề giữa người dùng và các bên liên quan.</p>
+    </li>
+
+    <li class="mb-3">
+      <strong>5.6. Người dùng phải tự chịu trách nhiệm khi sử dụng thông tin:</strong>
+      <p class="ms-3 mb-1">Người dùng có nghĩa vụ:</p>
+      <ul class="ms-4">
+        <li>Tự đánh giá mức độ tin cậy của thông tin được chia sẻ trên nền tảng.</li>
+        <li>Không sử dụng nội dung như bằng chứng duy nhất để tố cáo, công kích hoặc đưa ra phán xét tiêu cực.</li>
+        <li>Chịu toàn bộ hậu quả do việc sử dụng thông tin gây ra.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+<section class="mb-4" id="section6">
+  <h5>6. Quyền sở hữu trí tuệ</h5>
+
+  <p>Website cam kết tôn trọng và bảo vệ quyền sở hữu trí tuệ của tất cả các bên liên quan. Việc truy cập, sử dụng, đăng tải hoặc chia sẻ thông tin trên website đồng nghĩa với việc người dùng hiểu rõ và đồng ý với các quy định sau:</p>
+
+  <ul class="mt-3">
+    <li class="mb-3">
+      <strong>6.1. Quyền sở hữu đối với nội dung do người dùng tạo:</strong>
+      <ul class="ms-3">
+        <li>Người dùng giữ quyền sở hữu đối với nội dung gốc mà họ tự tạo và đăng tải trên website, bao gồm nhận xét, đánh giá hoặc nhận định.</li>
+        <li>Khi đăng nội dung, người dùng đồng ý cấp cho website quyền sử dụng <strong>vĩnh viễn, không độc quyền, miễn phí và có thể chuyển nhượng</strong> để:
+          <ul class="ms-3">
+            <li>Hiển thị công khai trên website.</li>
+            <li>Lưu trữ, xử lý, hoặc định dạng lại để phù hợp giao diện.</li>
+            <li>Phân tích dữ liệu hoặc sử dụng cho mục đích nghiên cứu phi thương mại.</li>
+          </ul>
+        </li>
+        <li>Website <strong>không có nghĩa vụ trả thù lao hoặc phí bản quyền</strong> cho nội dung người dùng đăng tải.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>6.2. Quyền sở hữu trí tuệ của website:</strong>
+      <ul class="ms-3">
+        <li>Tất cả các yếu tố cấu thành website (trừ nội dung người dùng), bao gồm: giao diện, logo, mã nguồn, tên miền, cấu trúc dữ liệu, tài liệu, bố cục… đều thuộc quyền sở hữu của người vận hành website hoặc bên được ủy quyền hợp pháp.</li>
+        <li>Mọi hành vi sao chép, chỉnh sửa, phân phối hoặc khai thác các yếu tố đó mà <strong>không có sự cho phép bằng văn bản</strong> đều là hành vi vi phạm pháp luật.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>6.3. Giới hạn quyền sử dụng đối với người dùng:</strong>
+      <ul class="ms-3">
+        <li>Người dùng được phép:
+          <ul class="ms-3">
+            <li>Truy cập và sử dụng website cho mục đích cá nhân, phi thương mại.</li>
+            <li>Trích dẫn nội dung hợp lý với điều kiện ghi rõ nguồn và không xuyên tạc.</li>
+          </ul>
+        </li>
+        <li>Người dùng <strong>không được phép</strong>:
+          <ul class="ms-3">
+            <li>Sao chép hàng loạt, crawl dữ liệu bằng bot hoặc công cụ tự động.</li>
+            <li>Kinh doanh, tái bản hoặc phát tán nội dung từ website.</li>
+            <li>Sử dụng nội dung website để cạnh tranh không lành mạnh hoặc gây ảnh hưởng tiêu cực đến người khác.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>6.4. Xử lý vi phạm sở hữu trí tuệ:</strong>
+      <ul class="ms-3">
+        <li>Website có quyền xóa, ẩn hoặc chặn truy cập các nội dung vi phạm mà không cần thông báo trước.</li>
+        <li>Có thể khóa tạm thời hoặc vĩnh viễn tài khoản người dùng vi phạm (nếu có tài khoản).</li>
+        <li>Sẵn sàng hợp tác với cơ quan chức năng hoặc chủ sở hữu bản quyền để xử lý theo quy định pháp luật.</li>
+        <li>Người bị ảnh hưởng có thể phản ánh hoặc yêu cầu xử lý qua kênh liên hệ ẩn danh (nếu được cung cấp).</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+<section class="mb-4" id="section7">
+  <h5>7. Chính sách bảo mật</h5>
+
+  <p>Website cam kết bảo vệ quyền riêng tư và dữ liệu cá nhân của người dùng theo nguyên tắc ẩn danh hoàn toàn. Mục tiêu là đảm bảo rằng mọi người có thể tự do chia sẻ đánh giá mà không bị lo ngại về việc bị theo dõi, xác định danh tính hoặc bị lộ thông tin.</p>
+
+  <ul class="mt-3">
+
+    <li class="mb-3">
+      <strong>7.1. Không thu thập thông tin định danh cá nhân:</strong>
+      <ul class="ms-3">
+        <li>Website <strong>không yêu cầu người dùng đăng nhập</strong>, cung cấp họ tên, email, số điện thoại hay bất kỳ thông tin cá nhân nào để sử dụng chức năng đánh giá.</li>
+        <li><strong>Không sử dụng cookie theo dõi hành vi</strong> có thể dẫn đến nhận dạng cá nhân, trừ các cookie kỹ thuật phục vụ chống spam hoặc xác nhận đánh giá không trùng lặp.</li>
+        <li><strong>Không tích hợp các dịch vụ đăng nhập hoặc theo dõi từ bên thứ ba</strong> như Google, Facebook, v.v.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>7.2. Dữ liệu có thể được lưu trữ tạm thời:</strong>
+      <ul class="ms-3">
+        <li>Website có thể ghi lại tạm thời một số dữ liệu kỹ thuật để đảm bảo an toàn hệ thống:
+          <ul class="ms-3">
+            <li>Địa chỉ IP, trình duyệt, thời gian truy cập.</li>
+            <li>Thông tin thiết bị và cookie kỹ thuật để chống spam, lạm dụng.</li>
+          </ul>
+        </li>
+        <li>Dữ liệu này <strong>không liên kết với bất kỳ cá nhân cụ thể nào</strong> và sẽ được xóa sau 7–30 ngày, trừ trường hợp cần phục vụ điều tra vi phạm.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>7.3. Không chia sẻ dữ liệu với bên thứ ba:</strong>
+      <ul class="ms-3">
+        <li>Website <strong>không chia sẻ, không bán, không trao đổi</strong> dữ liệu cho bất kỳ tổ chức, cá nhân hay nhà quảng cáo nào.</li>
+        <li>Không sử dụng dịch vụ phân tích bên ngoài như Google Analytics hoặc Facebook Pixel.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>7.4. Về tính ẩn danh và giới hạn bảo mật:</strong>
+      <ul class="ms-3">
+        <li>Website được thiết kế để tối đa hóa sự ẩn danh cho người dùng.</li>
+        <li><strong>Không có hệ thống nào an toàn tuyệt đối</strong>; trong trường hợp xảy ra vi phạm bảo mật, chúng tôi sẽ cố gắng thông báo công khai nếu cần thiết.</li>
+        <li>Người dùng được khuyến cáo <strong>không nên tự tiết lộ thông tin cá nhân</strong> trong nội dung đánh giá (như tên thật, tên giảng viên, email, số điện thoại...).</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>7.5. Liên hệ về bảo mật:</strong>
+      <ul class="ms-3">
+        <li>Hiện tại không có hệ thống liên hệ công khai do website hoạt động ẩn danh.</li>
+        <li>Nếu phát hiện lỗi bảo mật nghiêm trọng, người dùng có thể báo cáo thông qua biểu mẫu ẩn danh (nếu có) hoặc kênh tạm thời được cung cấp trên trang chủ.</li>
+      </ul>
+    </li>
+
+  </ul>
+</section>
+
+
+<section class="mb-4" id="section8">
+  <h5>8. Luật áp dụng</h5>
+
+  <p>Trang web này được xây dựng với mục tiêu phục vụ người dùng một cách ẩn danh, tự do và minh bạch trong khuôn khổ pháp luật quốc tế về quyền tự do biểu đạt. Tuy nhiên, do tính chất phi tập trung và ẩn danh của hệ thống, điều quan trọng là phải làm rõ các nguyên tắc pháp lý chi phối việc vận hành website và mối quan hệ với người sử dụng.</p>
+
+  <ul class="mt-3">
+
+    <li class="mb-3">
+      <strong>8.1. Tính chất pháp lý của website:</strong>
+      <ul class="ms-3">
+        <li>Website được vận hành theo hình thức <strong>không định danh người sở hữu</strong>, không đăng ký tại quốc gia cụ thể, <strong>không đặt máy chủ tại Việt Nam</strong> và <strong>không hoạt động như một pháp nhân thương mại</strong>.</li>
+        <li>Trang chỉ đóng vai trò là <strong>nền tảng lưu trữ nội dung do người dùng tự nguyện cung cấp</strong>.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>8.2. Hệ thống pháp luật áp dụng:</strong>
+      <ul class="ms-3">
+        <li>Website cam kết tuân thủ các nguyên tắc pháp lý quốc tế, bao gồm:
+          <ul class="ms-3">
+            <li><strong>Quyền tự do ngôn luận và biểu đạt</strong> theo Điều 19, Công ước Quốc tế về các Quyền Dân sự và Chính trị (ICCPR).</li>
+            <li><strong>Quyền riêng tư và ẩn danh</strong> phù hợp với các chuẩn mực bảo vệ dữ liệu như GDPR (EU).</li>
+          </ul>
+        </li>
+        <li>Trong trường hợp xảy ra tranh chấp, luật áp dụng là <strong>luật quốc tế</strong> và các điều khoản riêng của website.</li>
+        <li>Không cam kết phục tùng yêu cầu pháp lý từ bất kỳ một quốc gia riêng lẻ nào, trừ khi có quyết định từ tòa án quốc tế hoặc tổ chức có thẩm quyền hợp pháp.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>8.3. Giới hạn trách nhiệm theo khu vực địa lý:</strong>
+      <ul class="ms-3">
+        <li>Người dùng đến từ các quốc gia có luật nghiêm ngặt cần <strong>tự cân nhắc trách nhiệm pháp lý cá nhân</strong> khi truy cập và sử dụng website.</li>
+        <li>Website <strong>không chịu trách nhiệm cho việc sử dụng trái luật tại địa phương</strong>.</li>
+        <li>Người dùng hiểu rằng việc truy cập đồng nghĩa với việc họ <strong>tự chịu trách nhiệm</strong> về hành vi và hệ quả liên quan.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>8.4. Lưu ý về khả năng hợp tác pháp lý:</strong>
+      <ul class="ms-3">
+        <li>Website <strong>không có đại diện pháp lý, địa chỉ trụ sở, hoặc đơn vị tiếp nhận yêu cầu pháp lý</strong> từ bất kỳ tổ chức hay chính quyền nào.</li>
+        <li>Mọi yêu cầu pháp lý (nếu có) phải được gửi qua kênh công khai, với căn cứ và bằng chứng rõ ràng.</li>
+        <li>Website có thể xem xét gỡ nội dung nếu:
+          <ul class="ms-3">
+            <li>Nội dung vi phạm nghiêm trọng quyền nhân thân.</li>
+            <li>Chứa dữ liệu có thể định danh cá nhân.</li>
+            <li>Vi phạm chuẩn mực quốc tế (phân biệt chủng tộc, đe dọa, kích động bạo lực...).</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</section>
+
+
+<section class="mb-4" id="section9">
+  <h5>9. Thay đổi điều khoản</h5>
+
+  <p>Chúng tôi bảo lưu quyền điều chỉnh, cập nhật hoặc sửa đổi nội dung của “Điều khoản &amp; Điều kiện” vào bất kỳ thời điểm nào, nhằm đáp ứng yêu cầu pháp lý, thay đổi kỹ thuật, cải thiện tính bảo mật hoặc bảo đảm hoạt động ổn định của nền tảng.</p>
+
+  <ul class="mt-3">
+
+    <li class="mb-3">
+      <strong>9.1. Quyền thay đổi và cập nhật điều khoản:</strong>
+      <ul class="ms-3">
+        <li>Website có thể cập nhật điều khoản <strong>bất kỳ lúc nào</strong> và <strong>không cần thông báo trước</strong> đến người dùng.</li>
+        <li>Các thay đổi có hiệu lực ngay khi được đăng tại trang điều khoản.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>9.2. Trách nhiệm theo dõi thay đổi:</strong>
+      <ul class="ms-3">
+        <li>Do website <strong>không yêu cầu đăng nhập</strong>, chúng tôi <strong>không gửi thông báo cá nhân</strong> về các cập nhật.</li>
+        <li>Người dùng <strong>tự chịu trách nhiệm</strong> kiểm tra trang điều khoản mỗi khi truy cập để nắm các thay đổi mới nhất.</li>
+        <li>Việc tiếp tục sử dụng website sau khi điều khoản được cập nhật thể hiện <strong>sự đồng ý vô điều kiện</strong> với những nội dung thay đổi.</li>
+      </ul>
+    </li>
+
+    <li class="mb-3">
+      <strong>9.3. Ngày hiệu lực của điều khoản:</strong>
+      <ul class="ms-3">
+        <li>Mỗi phiên bản điều khoản sẽ kèm theo <strong>ngày hiệu lực</strong> hiển thị rõ ở đầu trang.</li>
+        <li>Nếu không đồng ý với điều khoản mới, người dùng nên <strong>ngừng truy cập</strong> và sử dụng website.</li>
+      </ul>
+    </li>
+
+  </ul>
+</section>
+
+
+<div class="alert alert-secondary mb-5" role="alert">
+  <strong>Ngày cập nhật:</strong> 29/05/2025 &nbsp;|&nbsp;
+  <strong>Ngày hiệu lực:</strong> 29/05/2025
+</div>
+</div>
+
+
+</div> <!-- end .container -->
+
+<footer class="bg-dark border-top mt-5 pt-4 pb-3 text-light">
+    <div class="container">
+        <div class="row">
+
+            <!-- Cột 1: Giới thiệu -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5 class="text-light">Review ĐHQGHN</h5>
+                <p class="small mb-1">
+                    Nền tảng chia sẻ đánh giá giảng viên và môn học hoàn toàn ẩn danh, do cộng đồng sinh viên đóng góp.
+                </p>
+                <p class="small">
+                    Mọi nội dung do người dùng gửi. Chúng tôi không chịu trách nhiệm về nội dung các đánh giá.
+                </p>
+            </div>
+
+            <!-- Cột 2: Liên hệ -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên hệ</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="terms.php.html" class="text-warning">Điều khoản & Điều kiện</a></li>
+                    <li class="mb-2"><a href="privacy.php.html" class="text-warning">Chính sách Bảo mật</a></li>
+                    <li class="mb-2"><a href="status.php.html" class="text-warning">Trạng thái hệ thống</a></li>
+                    <li>
+                        <a href="https://www.dmca.com/Protection/Status.aspx?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-07.png?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Liên kết hữu ích -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên kết hữu ích</h6>
+                <ul class="list-unstyled small text-light">
+                    <li class="mb-2"><a href="index.php.html" class="text-warning">Trang chủ</a></li>
+                    <li class="mb-2"><a href="submit.php.html" class="text-warning">Gửi đánh giá</a></li>
+                    <li class="mb-2"><a href="search.php.html" class="text-warning">Tìm kiếm</a></li>
+                    <li class="mb-2"><a href="contact.php.html" class="text-warning">Liên hệ</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-center small mt-3">
+            &copy; 2025 DHQG.XYZ. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

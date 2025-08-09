@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Review giảng viên VNU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="title" name="title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="description" name="description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="keywords" name="keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="url" name="url" content="https://dhqg.xyz">
+    <meta property="type" name="type" content="website">
+
+    <!-- Open Graph cho Facebook, Zalo, Messenger -->
+    <meta property="og:title" content="Đánh giá giảng viên ĐHQGHN - Review môn học, chia sẻ ý kiến">
+    <meta property="og:description" content="Xem và chia sẻ đánh giá giảng viên, môn học tại Đại học Quốc gia Hà Nội. Không cần tài khoản.">
+    <meta property="og:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta property="og:url" content="https://dhqg.xyz">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Đánh giá giảng viên ĐHQGHN">
+    <meta name="twitter:description" content="Review giảng viên, môn học ĐHQGHN không cần đăng nhập.">
+    <meta name="twitter:keywords" content="review giảng viên, đánh giá giảng viên, đại học quốc gia, ĐHQGHN, giáo viên đại học, giảng viên VNU, nhận xét giảng viên, vnu lecturer review">
+    <meta name="twitter:image" content="https://dhqg.xyz">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.js"></script>
+
+
+    <!-- CSS custom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="index.php.html">Review giảng viên VNU</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Mở menu điều hướng">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto nav-pills m-2">
+                <li class="nav-item">
+                    <a href="index.php.html" class="nav-link active p-2" aria-current="page">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="submit.php.html">Đăng đánh giá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light p-2" href="search.php.html">Tìm kiếm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container flex-grow-1">
+
+    <!-- Alert thông báo -->
+    <div class="alert alert-warning d-flex align-items-center justify-content-start gap-2" role="alert" style="cursor: pointer;" onclick="window.location.href='./submit.php'" id="notification">
+        <span class="fw-semibold">Nhấn vào đây để đăng đánh giá của bạn (Hoàn toàn ẩn danh)</span>
+    </div>
+
+
+<div class="container py-5">
+  <h1 class="mb-4">Chính sách Bảo mật</h1>
+
+  <div class="mb-4">
+    <h5>1. Mục tiêu bảo mật</h5>
+    <p>
+      Website cam kết bảo vệ quyền riêng tư của người dùng. Chính sách này nêu rõ cách thức mà chúng tôi xử lý thông tin, dữ liệu (nếu có) liên quan đến người truy cập và nội dung họ gửi lên nền tảng.
+    </p>
+  </div>
+
+  <div class="mb-4">
+    <h5>2. Không thu thập thông tin cá nhân</h5>
+    <p>
+      Chúng tôi <strong>không yêu cầu người dùng đăng nhập</strong>, <strong>không yêu cầu cung cấp tên, email, số điện thoại</strong> hoặc bất kỳ thông tin cá nhân nào khác khi truy cập hoặc gửi nội dung lên website.
+    </p>
+  </div>
+
+  <div class="mb-4">
+    <h5>3. Ẩn danh hoàn toàn</h5>
+    <ul>
+      <li>Tất cả bài viết, đánh giá, nhận xét đều <strong>ẩn danh tuyệt đối</strong>.</li>
+      <li>Chúng tôi không lưu trữ thông tin nhận dạng cá nhân nào gắn liền với nội dung người dùng gửi.</li>
+      <li>Không có cơ chế để truy ngược danh tính người gửi nội dung.</li>
+    </ul>
+  </div>
+
+  <div class="mb-4">
+    <h5>4. Cookie và công cụ theo dõi</h5>
+    <ul>
+      <li>Website <strong>không sử dụng cookie theo dõi hành vi cá nhân</strong>.</li>
+      <li>Các cookie, nếu có, chỉ phục vụ mục đích kỹ thuật để hiển thị nội dung hoặc bảo vệ hệ thống.</li>
+      <li>Chúng tôi <strong>không sử dụng</strong> Google Analytics, Facebook Pixel, hoặc bất kỳ công cụ bên thứ ba nào để phân tích hành vi cá nhân.</li>
+    </ul>
+  </div>
+
+  <div class="mb-4">
+    <h5>5. Địa chỉ IP và log truy cập</h5>
+    <ul>
+      <li>Hệ thống máy chủ có thể tự động ghi lại địa chỉ IP nhằm phục vụ mục đích <strong>bảo mật hệ thống</strong> và <strong>chống lạm dụng</strong>.</li>
+      <li>Các IP này <strong>không được liên kết hoặc sử dụng để xác định danh tính</strong> người dùng, và <strong>không chia sẻ cho bên thứ ba</strong>.</li>
+      <li>Dữ liệu log, nếu có, chỉ dùng nội bộ cho việc bảo trì hệ thống.</li>
+    </ul>
+  </div>
+
+  <div class="mb-4">
+    <h5>6. Chia sẻ dữ liệu</h5>
+    <p>
+      Chúng tôi <strong>không chia sẻ, chuyển giao, bán hoặc tiết lộ bất kỳ dữ liệu nào</strong> cho bên thứ ba, trừ khi bị yêu cầu bởi pháp luật Việt Nam.
+    </p>
+  </div>
+
+  <div class="mb-4">
+    <h5>7. Bảo mật dữ liệu</h5>
+    <p>
+      Mọi hệ thống đều được bảo vệ bằng các biện pháp kỹ thuật phù hợp để tránh truy cập trái phép. Mặc dù không thu thập dữ liệu cá nhân, chúng tôi vẫn tuân thủ nguyên tắc an toàn dữ liệu để bảo vệ tính toàn vẹn và ổn định của hệ thống.
+    </p>
+  </div>
+
+  <div class="mb-4">
+    <h5>8. Thay đổi chính sách</h5>
+    <p>
+      Chính sách bảo mật có thể được cập nhật mà không cần thông báo trước. Người dùng nên kiểm tra định kỳ để nắm rõ nội dung mới nhất.
+    </p>
+  </div>
+
+  <div class="mb-4">
+    <h5>9. Liên hệ</h5>
+    <p>
+      Do website hoạt động ẩn danh và không cung cấp kênh liên hệ trực tiếp, mọi thắc mắc về chính sách này xin vui lòng đọc kỹ toàn bộ nội dung. Nếu bạn không đồng ý, xin vui lòng ngừng sử dụng dịch vụ.
+    </p>
+  </div>
+
+  <div class="alert alert-secondary mt-5" role="alert">
+    <strong>Ngày cập nhật:</strong> 29/05/2025 &nbsp;|&nbsp;
+    <strong>Ngày hiệu lực:</strong> 29/05/2025
+  </div>
+</div>
+
+
+</div> <!-- end .container -->
+
+<footer class="bg-dark border-top mt-5 pt-4 pb-3 text-light">
+    <div class="container">
+        <div class="row">
+
+            <!-- Cột 1: Giới thiệu -->
+            <div class="col-12 col-md-4 mb-3">
+                <h5 class="text-light">Review ĐHQGHN</h5>
+                <p class="small mb-1">
+                    Nền tảng chia sẻ đánh giá giảng viên và môn học hoàn toàn ẩn danh, do cộng đồng sinh viên đóng góp.
+                </p>
+                <p class="small">
+                    Mọi nội dung do người dùng gửi. Chúng tôi không chịu trách nhiệm về nội dung các đánh giá.
+                </p>
+            </div>
+
+            <!-- Cột 2: Liên hệ -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên hệ</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="terms.php.html" class="text-warning">Điều khoản & Điều kiện</a></li>
+                    <li class="mb-2"><a href="privacy.php.html" class="text-warning">Chính sách Bảo mật</a></li>
+                    <li class="mb-2"><a href="status.php.html" class="text-warning">Trạng thái hệ thống</a></li>
+                    <li>
+                        <a href="https://www.dmca.com/Protection/Status.aspx?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-07.png?ID=9585947a-095f-4de9-bdb0-b06345ed6cc8"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Liên kết hữu ích -->
+            <div class="col-6 col-md-4 mb-3">
+                <h6 class="text-dark">Liên kết hữu ích</h6>
+                <ul class="list-unstyled small text-light">
+                    <li class="mb-2"><a href="index.php.html" class="text-warning">Trang chủ</a></li>
+                    <li class="mb-2"><a href="submit.php.html" class="text-warning">Gửi đánh giá</a></li>
+                    <li class="mb-2"><a href="search.php.html" class="text-warning">Tìm kiếm</a></li>
+                    <li class="mb-2"><a href="contact.php.html" class="text-warning">Liên hệ</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-center small mt-3">
+            &copy; 2025 DHQG.XYZ. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
